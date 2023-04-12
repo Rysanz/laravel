@@ -24,7 +24,7 @@ class HomeController extends Controller
         $tambah->alamat = $request->alamat;
         $tambah->save();
  
-        return redirect('/')->with('toast_success','Data Ditambahkan');
+        return redirect('/');
     }
     public function change(Request $request,$id)
     {
@@ -36,18 +36,13 @@ class HomeController extends Controller
         $tambah->alamat = $request->alamat;
         $tambah->save();
  
-        return redirect('/')->with('toast_success','Data Ditambahkan');
+        return redirect('/');
     }
-    public function delete($id)
-    {
-        $del = mahasiswa::find($id);
-        return view("Delete",compact("del"),["mahasiswas" => mahasiswa::all()]);
-    }
-    public function hapuse($id)
+    public function hapuss($id)
     {
         $hapus = Mahasiswa::find($id);
         $hapus->delete();
  
-        return redirect('/')->with('success','Data Dihapus');
+        return redirect('/');
     }
 }

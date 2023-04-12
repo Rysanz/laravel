@@ -1,3 +1,4 @@
+@extends('edit')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +56,7 @@
 
   {{-- Tabel --}}
     <table class="table">
-        <thead>
+        <thead class="table-dark">
           <tr>
             <th scope="col">NO</th>
             <th scope="col">NIM</th>
@@ -78,7 +79,7 @@
             <td>{{$mahasiswa->alamat}}</td>
             <td>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="{{url('update', $mahasiswa->id)}}"><button class="btn btn-primary me-md-2" type="button">Edit</button></a>
+                    <a href="#edit{{$mahasiswa->id}}" data-bs-toggle="modal"><button class="btn btn-primary me-md-2" type="button">Edit</button></a>
                     <form action="{{url('delete',$mahasiswa->id)}}" method="POST">
                         {{csrf_field()}}
                         <button class="btn btn-danger" type="submit" onclick="return confirm('Yakin ingin di hapus ?')">Delete</button>

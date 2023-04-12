@@ -18,4 +18,4 @@ Route::get('/', [HomeController::class, 'index']);
 Route::post('/masuk',[HomeController::class,'store']);
 Route::get('/update/{id}',[HomeController::class,'edit']);
 Route::post('/change/{id}',[HomeController::class,'change']);
-Route::post('/delete/{id}',[HomeController::class,'hapuse']);
+Route::post('/delete/{id}',[HomeController::class,'hapuss']);
